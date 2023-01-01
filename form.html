@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+	<meta charset="utf-8">
+	<title>LOGIN Students</title>
+	<link href="bootstrap.min.css" rel="stylesheet" />
+	<link href="style.css" rel="stylesheet">	
+	<style> table, td  {
+		border: 1px solid black;}
+		</style>
+</head>
+
+<body>
+	<form method="post" id="myform" onsubmit="return Valid()">
+		<hr>
+		<img width='100%' height='50%' src="111.jpg">
+		</hr>
+		<p class="bluespace"></p>
+		<center>
+			<fieldset>
+				<div>
+					<h1> إضافة طالب</h1>
+				<br />
+				<legend><img width='100px' src="images1.jpg"></legend>
+				<br />
+				<form method="post" class='login' name='form1'>
+					<table>
+
+					<div>
+						<form id="myForm" class="card-body text-bg-light"></form>
+						<label for="username">اسم المستخدم:</label>
+						<input id="username" type="text"  class="form-control" name="Username" placeholder="Name_000000" Add
+							autocomplete="off" required onchange="chkusername();" />
+						<br />
+					</div>
+					<br />
+						
+
+
+
+					<div>
+						<label for="studentname">اسم الطالب:</label>
+						&nbsp;&nbsp;&nbsp;<input id="studentname" type="text" class="form-control"
+							placeholder="مثال: اسم الطالب" onchange="chkname();"  /> 
+						<br />
+					</div>
+					<br />
+
+
+					<div>
+						<label for="date">تاريخ الولادة :</label>
+						<input id="date" type="date" name="date"  class="form-control" onchange="chkcaddDate();" />
+					<br />
+
+
+
+					<div>
+						<label for="program">البرنامج
+							:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<select id="program" name="program" class="input form-control" required>
+							<option value="BAIT" selected>BIT</option>
+							<option value="BACT">BACT</option>
+							<option value="ITE">ITE</option>
+						</select>
+					</div>
+					<br />
+
+
+					<div>
+						<label for="mobile">الموبايل :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input id="mobile" type="text" name="mobile" placeholder=" EX:+963-912345678" autocomplete="off"
+							size='20' maxlength='12' required onchange="chk_addNumber()" >
+							
+							
+						<br />
+					</div>
+
+
+					<div>
+						<label for="captcha">يرجى إدخال رمز التحقق (كابتشا) :</label>
+						<label title="444"></label>
+						<input id="captcha" type="tel" style="text-decoration: line-through" readonly="readonly" class="" />
+						<br>
+						<input type="text" id="captchaenter" placeholder="أدخل رمز التحقق أعلاه"><br />
+						<br />
+					</div>
+
+					<input id="addbutton" type="button" value="اضافة" class="btn btn-success" onclick="addemp();" />
+
+					<br />
+				</table>
+				</div>
+
+			</fieldset>
+			
+		
+			<div class="card mb-4 rounded-3 shadow-sm border-secondary">
+
+				<div class="card-header py-3 text-bg-dark  border-secondary">
+					<h4 class="my-0 fw-normal">
+						جدول باسماء الطلاب
+					</h4>
+				</div>
+				<form class="card-body text-bg-light" ">
+					<p>
+						فرز حسب  <select id="select" class="input" onchange="bubbleSort()">
+							<option value="">All </option>
+							<option value="BAIT"> BAIT</option>
+							<option value="ITC"> ITC </option>
+							<option value="BIT"> BIT  </option>
+						</select>
+					</p>
+	
+	
+					<p>
+						رقم المستخدم
+						<input id="username_radio" type="radio" dir="rtl" name="radioff" value="11" checked="checked" onclick="planeChoice(11)" />
+						اسم الطالب
+						<input id="name_radio" type="radio" dir="rtl" name="radioff" value="22" onclick="planeChoice(22)" />
+						البرنامج
+						<input id="prog_radio" type="radio" dir="rtl" name="radioff" value="33" onclick="planeChoice(33)" />
+						<br />
+					</p>
+					<table id="table_table" border="1" class="table table-striped">
+						<tr>
+							<th>متسلسل</th>
+							<th> اسم المستخدم </th>
+							<th> اسم الطالب </th>
+							<th>  البرنامج </th>
+						</tr>
+	
+	
+	
+					</table>
+					<div id="result"></div>
+				</form>
+			</div>
+	
+
+
+			
+			<div class="card mb-4 rounded-3 shadow-sm border-secondary">
+
+				<div class="card-header py-3 text-bg-dark  border-secondary">
+					<h4 class="my-0 fw-normal">
+						Convert to JSON
+					</h4>
+				</div>
+
+				<div class="card-body text-bg-light" ">
+					<input id="Convert_JSON" type="button" value="Convert to JSON" class="btn btn-success" onclick="convertToTable();" />
+					<textarea id="Converttextarea" rows="10" cols="4" placeholder="اضغط على زر Convert to JSON " class="form-control"></textarea>
+				</div>
+	
+			</div>
+
+			<div type='hidden' id='result' class='result'></div>
+			<p class="bluespace"></p>
+			<hr />
+			Assignment for IWB202 - S22- C1-Dr.Mazen Khadour
+		</center>
+	</form>
+	<script type="text/javascript" src="sheet.js"></script>
+</body>
+</html>
